@@ -10,7 +10,6 @@ Gem::Specification.new do |gem|
   gem.files                 = `git ls-files`.split($\)
   gem.executables           = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files            = Dir["test/unit/ts_unit.rb"]
-  gem.name                  = "litle-skd-for-ruby"
   gem.require_paths         = ["lib"]
   gem.version               = "8.13.2"
   gem.required_ruby_version = '>=1.8.6'
