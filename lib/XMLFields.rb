@@ -112,7 +112,7 @@ module LitleOnline
         return
       end
       if(!list.include?(value))
-        raise "If #{class_name} #{field_name} is specified, it must be in #{list.to_s}"
+        raise "If #{class_name} #{field_name} is specified, it must be in #{list.inspect}"
       end
     end
     
