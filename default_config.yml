@@ -1,0 +1,9 @@
+user: 
+password:
+currency_merchant_map:
+  DEFAULT:
+default_report_group: 'Default Report Group'
+version: '8.13'
+url: 'https://www.testlitle.com/sandbox/communicator/online'
+printxml: true
+timeout: 65
