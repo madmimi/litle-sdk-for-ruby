@@ -31,14 +31,14 @@ module LitleOnline
 
   class Newtest < Test::Unit::TestCase
     def test_set_merchant_id
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}})
       litle = LitleOnlineRequest.new
       assert_equal '2', litle.send(:get_merchant_id, {'merchantId'=>'2'})
       assert_equal '1', litle.send(:get_merchant_id, {'NotMerchantId'=>'2'})
     end
   
     def test_simple
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash = {
         'reportGroup'=>'Planets',
         'orderId'=>'12344',
@@ -57,7 +57,7 @@ module LitleOnline
     end
   
     def test_authorization_attributes
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'reportGroup'=>'Planets',
         'id' => '003',
@@ -77,7 +77,7 @@ module LitleOnline
     end
   
     def test_authorization_elements
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'reportGroup'=>'Planets',
         'id' => '004',
@@ -97,7 +97,7 @@ module LitleOnline
     end
   
     def test_authorization_card_field
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'reportGroup'=>'Planets',
         'id' => '005',
@@ -117,7 +117,7 @@ module LitleOnline
     end
   
     def test_sale_card_field
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'reportGroup'=>'Planets',
         'id' => '006',
@@ -137,7 +137,7 @@ module LitleOnline
     end
   
     def test_capture_amount_unset_should_not_be_in_xml
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'id' => '006',
         'reportGroup'=>'Planets',
@@ -151,7 +151,7 @@ module LitleOnline
     end
   
     def test_force_capture_amount_unset_should_not_be_in_xml
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'id' => '006',
         'orderId'=>'12344',
@@ -167,7 +167,7 @@ module LitleOnline
     end
   
     def test_amount_is_not_required_in_echeck_credit
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'id' => '006',
         'orderId'=>'12344',
@@ -183,7 +183,7 @@ module LitleOnline
     end
   
     def test_amount_is_not_required_in_echeck_sale
-      Configuration.any_instance.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
+      Configuration.stubs(:config).returns({'currency_merchant_map'=>{'DEFAULT'=>'1'}, 'user'=>'a','password'=>'b','version'=>'8.10'})
       hash={
         'id' => '006',
         'orderId'=>'12344',

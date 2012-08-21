@@ -38,7 +38,7 @@ module LitleOnline
       'default_report_group'  => 'Default Report Group',
       'version'               => '8.13',
       'url'                   => 'https://www.testlitle.com/sandbox/communicator/online',
-      'printxml'              => true,
+      'printxml'              => false,
       'timeout'               => 65,
       'currency_merchant_map' => {
         'DEFAULT' => ''
