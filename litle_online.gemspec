@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.executables           = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files            = Dir["test/unit/ts_unit.rb"]
   gem.require_paths         = ["lib"]
-  gem.version               = "8.13.2"
+  gem.version               = "8.13.2b"
   gem.required_ruby_version = '>=1.8.6'
   gem.platform              = Gem::Platform::RUBY
   gem.has_rdoc              = true
